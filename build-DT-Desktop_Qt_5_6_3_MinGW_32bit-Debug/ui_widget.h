@@ -40,6 +40,10 @@ public:
     QSpacerItem *verticalSpacer_4;
     QPushButton *pushButton;
     QSpacerItem *verticalSpacer;
+    QLabel *contours_label;
+    QLineEdit *contours;
+    QLabel *label_4;
+    QLineEdit *main_contours;
     QPushButton *pushButton_2;
     QPushButton *pushButton_5;
     QPushButton *pushButton_4;
@@ -107,6 +111,26 @@ public:
 
         verticalLayout->addItem(verticalSpacer);
 
+        contours_label = new QLabel(Widget);
+        contours_label->setObjectName(QStringLiteral("contours_label"));
+
+        verticalLayout->addWidget(contours_label);
+
+        contours = new QLineEdit(Widget);
+        contours->setObjectName(QStringLiteral("contours"));
+
+        verticalLayout->addWidget(contours);
+
+        label_4 = new QLabel(Widget);
+        label_4->setObjectName(QStringLiteral("label_4"));
+
+        verticalLayout->addWidget(label_4);
+
+        main_contours = new QLineEdit(Widget);
+        main_contours->setObjectName(QStringLiteral("main_contours"));
+
+        verticalLayout->addWidget(main_contours);
+
         pushButton_2 = new QPushButton(Widget);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
 
@@ -160,6 +184,8 @@ public:
         );
         create_points->setText(QApplication::translate("Widget", "Create Points", Q_NULLPTR));
         pushButton->setText(QApplication::translate("Widget", "Delaunay", Q_NULLPTR));
+        contours_label->setText(QApplication::translate("Widget", "Step of contours:", Q_NULLPTR));
+        label_4->setText(QApplication::translate("Widget", "Step of main contours:", Q_NULLPTR));
         pushButton_2->setText(QApplication::translate("Widget", "Create contours", Q_NULLPTR));
         pushButton_5->setText(QApplication::translate("Widget", "Slope", Q_NULLPTR));
         pushButton_4->setText(QApplication::translate("Widget", "Aspect", Q_NULLPTR));

@@ -51,8 +51,12 @@ void Widget::on_pushButton_2_clicked()
     //Create contour lines
     ui->Canvas->clearContours();
     std::vector<Edge> dt = ui->Canvas->getDT();
-    std::vector<Edge> contours = Algorithms::createContours(dt, 0, 100, 5);
+    int cont = ui->contours->text().toDouble();
+    int mcont = ui->main_contours->text().toDouble();
+    std::vector<Edge> contours = Algorithms::createContours(dt, 0, 8848, cont);
+    std::vector<Edge> mcontours = Algorithms::createContours(dt, 0, 8848, mcont);
     ui->Canvas->setContours(contours);
+    ui->Canvas->setMainContours(mcontours);
     repaint();
 }
 

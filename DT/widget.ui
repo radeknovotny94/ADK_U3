@@ -60,21 +60,6 @@
          <string>Mound</string>
         </property>
        </item>
-       <item>
-        <property name="text">
-         <string>Spocinek</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Ridge</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Valey</string>
-        </property>
-       </item>
       </widget>
      </item>
      <item>
@@ -116,6 +101,26 @@
         </size>
        </property>
       </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="contours_label">
+       <property name="text">
+        <string>Step of contours:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="contours"/>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Step of main contours:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="main_contours"/>
      </item>
      <item>
       <widget class="QPushButton" name="pushButton_2">

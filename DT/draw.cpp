@@ -59,11 +59,18 @@ void Draw::paintEvent(QPaintEvent *e)
    }
 
    //Draw contour lines
-   painter.setPen(Qt::green);
+   painter.setPen(QPen(Qt::darkGray, 1));
 
    for(int i = 0; i < contours.size(); i++)
    {
        painter.drawLine(contours[i].getS(), contours[i].getE());
+   }
+
+   painter.setPen(QPen(Qt::black, 2));
+
+   for(int i = 0; i < mcontours.size(); i++)
+   {
+       painter.drawLine(mcontours[i].getS(), mcontours[i].getE());
    }
 
    //Draw slope
@@ -113,8 +120,6 @@ void Draw::paintEvent(QPaintEvent *e)
        double my = (p1.y()+p2.y()+p3.y())/3;
 
        painter.drawPolygon(triangle);
-       painter.setPen(Qt::red);
-       painter.drawText(mx, my, QString::number(t.getAspect()));
    }
 
    painter.end();
@@ -137,5 +142,6 @@ void Draw::clearAll()
     slope.clear();
     aspect.clear();
     contours.clear();
+    mcontours.clear();
 }
 
