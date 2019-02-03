@@ -267,11 +267,14 @@ QPoint3D Algorithms::getContourPoint(QPoint3D &p1, QPoint3D &p2, double z)
     return p;
 }
 
-std::vector<Edge> Algorithms::createContours(std::vector<Edge> &dt, double z_min, double z_max, double dz)
+std::vector<Edge> Algorithms::createContours(std::vector<Edge> &dt, double dz)
 {
+    //Declare constants
+    const double ZMIN = 0.0;
+    const double ZMAX = 8848.0;
+
     //Create contour lines
     std::vector<Edge> contours;
-
 
     //Process all triangles
     for(int i = 0; i < dt.size(); i += 3)
@@ -287,7 +290,7 @@ std::vector<Edge> Algorithms::createContours(std::vector<Edge> &dt, double z_min
         double z3 = p3.getZ();
 
         //Find all contour lines
-        for(double z = z_min; z <= z_max; z+=dz)
+        for(double z = ZMIN; z <= ZMAX; z+=dz)
         {
            // High differences
            double dz1 = z - z1;
